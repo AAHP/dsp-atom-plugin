@@ -1,2 +1,2 @@
 # dsp-atom-plugin
-Custom Atom plugin for DSP
+Custom Atom plugin for DSP.
