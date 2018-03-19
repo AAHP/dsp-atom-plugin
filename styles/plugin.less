@@ -1,0 +1,290 @@
+// The ui-variables file is provided by base themes provided by Atom.
+//
+// See https://github.com/atom/atom-dark-ui/blob/master/styles/ui-variables.less
+// for a full listing of what's available.
+@import "ui-variables";
+
+@colorLoader: #70c542;
+
+// webview styles
+div.browser-plus {
+  .native-key-bindings.url {
+    display: none;
+  }
+
+  webview.native-key-bindings {
+    height: 100%;
+  }
+}
+
+// plugin styles
+.plugin {
+  .message {
+    background-color: grey;
+  }
+}
+
+.console {
+  overflow: auto;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+
+  > li {
+    display: block;
+    width: 100%;
+    padding: 0 20px;
+    margin-bottom: 10px;
+    list-style: none;
+    box-sizing: border-box;
+
+    &.info {
+      color: green;
+    }
+
+    &.error {
+      color: red;
+    }
+  }
+}
+
+.view-executed-data {
+  width: 100%;
+  padding: 10px 20px;
+  overflow-y: scroll;
+
+  .error-msg,
+  .success-msg {
+    font-size: 13px;
+    border-radius: 0;
+    background: transparent;
+    color: #99a6b8;
+    font-family: 'BlinkMacSystemFont', 'Lucida Grande', 'Segoe UI', sans-serif;
+  }
+}
+
+.topToolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 60px;
+  padding: 0 30px;
+  box-sizing: border-box;
+
+  div {
+    display: inline-block;
+
+    &.work-dir-select, &.env-select {
+      margin-right:0;
+      position: relative;
+
+      &:after {
+        color: #333;
+        content: '\25BE';
+        font-size: 20px;
+        position: absolute;
+        right: 10px;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+    }
+
+    > select {
+      background-color: #fff;
+      display: inline-block;
+      width: 200px;
+      border: none;
+      border-radius: 0;
+      box-shadow: none;
+      color: #000;
+      padding: 5px 10px;
+      appearance: none;
+      -webkit-appearance: none;
+    }
+    select:required:invalid {
+      color: red;
+    }
+    option[value=""][disabled] {
+      display: none;
+    }
+
+    > button {
+      display: inline-block;
+      margin-left: 10px;
+    }
+    .button {
+      width: 28px;
+      height: 28px;
+      margin-left: 5px;
+      background-color: #2185d0;
+      border: none;
+      color: #fff;
+      vertical-align: top;
+
+      &.add-env, &.remove-env {
+        background-color: transparent;
+        color: #929292;
+        font-size: 40px;
+        font-weight: 300;
+        padding: 0;
+        position: relative;
+        top: -18px;
+      }
+
+      &.add-env {
+        margin-left: 10px;
+      }
+    }
+  }
+
+  .control-button {
+    background-color: #2185d0;
+    border: none;
+    color: #fff;
+    opacity: 1;
+    padding: 5px 10px;
+
+    &[disabled="true"], &[disabled="disabled"] {
+      opacity: .5;
+    }
+    &:disabled {
+      opacity: .5;
+    }
+    &.hidden {
+      display: none;
+    }
+
+    &.connection-button {
+      background-color: #597BD2;
+      border-radius: 5px;
+      padding: 5px 30px;
+    }
+
+    &.help-button {
+      background-color: transparent;
+      border: 1px solid #929292;
+      border-radius: 50%;
+      color: #929292;
+      margin-left: 10px;
+    }
+
+    &.run-button {
+      background-color: #42a53c;
+      border-radius: 5px;
+      padding: 5px 30px;
+    }
+
+    &.cancel-button {
+      background-color: #ff851b;
+      border-radius: 5px;
+      padding: 5px 30px;
+    }
+  }
+
+  .connection-status-cont {
+    border: none;
+    color: #fff;
+    padding: 5px 10px;
+    text-align: center;
+    text-transform: capitalize;
+    width: 120px;
+    margin-left: 15px;
+
+    &.connected {
+      background: #21ba45;
+      &:before {
+        content: "\02714";
+        padding-right: 4px;
+      }
+    }
+
+    &.connecting {
+      background-color: #fbbd08;
+        &:before {
+          content: "\0274D";
+          padding-right: 4px;
+      }
+    }
+
+    &.disconnected {
+      background-color: #db2828;
+        &:before {
+          content: "\02716";
+          padding-right: 4px;
+      }
+    }
+  }
+}
+
+.add-new-environment-modal {
+  .button {
+    color: #fff;
+    background-color: #597BD2;
+    border-radius: 5px;
+    padding: 5px 30px;
+  }
+}
+.loader {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 50px;
+  height: 50px;
+  transform: translate(-50%, -50%);
+
+  > svg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transform-origin: center center;
+    animation: rotate 2s linear infinite;
+  }
+
+  .loader-path {
+    stroke-dasharray: 150,200;
+    stroke-dashoffset: -10;
+    stroke-linecap: round;
+    animation: dash 1.5s ease-in-out infinite, color 6s ease-in-out infinite;
+  }
+
+  @keyframes rotate {
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
+  @keyframes dash {
+    0% {
+      stroke-dasharray: 1,200;
+      stroke-dashoffset: 0;
+    }
+    50% {
+      stroke-dasharray: 89,200;
+      stroke-dashoffset: -35;
+    }
+    100% {
+      stroke-dasharray: 89,200;
+      stroke-dashoffset: -124;
+    }
+  }
+
+  @keyframes color {
+    0% {
+      stroke: @colorLoader;
+    }
+    40% {
+      stroke: @colorLoader;
+    }
+    66% {
+      stroke: @colorLoader;
+    }
+    80%,
+    90% {
+      stroke: @colorLoader;
+    }
+  }
+}

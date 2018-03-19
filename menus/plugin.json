@@ -1,0 +1,16 @@
+{
+  "context-menu": {
+    "atom-text-editor": [
+      {
+        "label": "Auth plugin",
+        "command": "plugin:auth"
+      }
+    ]
+  },
+  "menu": [
+    {
+      "label": "Auth plugin",
+      "command": "plugin:auth"
+    }
+  ]
+}
