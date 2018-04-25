@@ -1,7 +1,7 @@
 {
   "name": "dsp-atom-plugin",
   "main": "./lib/index",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "DSP Atom Plugin",
   "keywords": [],
   "activationCommands": {},
