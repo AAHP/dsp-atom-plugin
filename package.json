@@ -1,7 +1,7 @@
 {
   "name": "dsp-atom-plugin",
   "main": "./lib/index",
-  "version": "0.0.4",
+  "version": "0.0.7",
   "description": "DSP Atom Plugin",
   "keywords": [],
   "activationCommands": {},
@@ -13,6 +13,7 @@
   "scripts": {},
   "dependencies": {
     "archiver": "^2.1.1",
+    "atom-package-deps": "^4.6.2",
     "axios": "^0.17.1",
     "chokidar": "2",
     "doc-ready": "^1.0.4",
